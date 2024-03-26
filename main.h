@@ -6,10 +6,25 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-int _putchar(char prm_c);
-int _printf(const char *prm_ptr_format, ...);
-void print_char(char prm_c);
-void print_string(char *prm_ptr_string);
-void print_percent(char prm_c);
+/**
+ * struct print - Define the structure of all print functions
+ *
+ * @specifier: The specifier
+ * @print_function: The function associated
+ */
+
+typedef struct print
+{
+	char *specifier;
+	int (*print_function)(va_list);
+} print;
+
+int _putchar(char c);
+int _printf(const char *ptr_format, ...);
+int print_char(va_list ptr_var);
+int print_string(va_list ptr_var);
+int print_percent(va_list ptr_var);
+int print_decimal(va_list ptr_var);
+int print_integer(va_list ptr_var);
 
 #endif
