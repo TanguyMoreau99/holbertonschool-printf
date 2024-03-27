@@ -10,18 +10,18 @@
  */
 
 
-int (*get_print_function(char *ptr_specifier))(va_list)
+int (*get_print_function(const char *ptr_specifier))(va_list)
 {
 	print spe[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{'%', print_percent},
+		{"%", print_percent},
 		{"d", print_decimal},
 		{"i", print_integer},
 		{NULL, NULL}
 		};
 	int i = 0;
-}
+
 	while (spe[i].specifier != NULL)
 	{
 		if (spe[i].specifier[0] == ptr_specifier[0])
@@ -32,3 +32,4 @@ int (*get_print_function(char *ptr_specifier))(va_list)
 	}
 
 	return (NULL);
+}

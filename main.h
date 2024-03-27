@@ -1,6 +1,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+#include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,6 +22,7 @@ typedef struct print
 
 int _putchar(char c);
 int _printf(const char *ptr_format, ...);
+int (*get_print_function(const char *ptr_specifier))(va_list);
 int print_char(va_list ptr_var);
 int print_string(va_list ptr_var);
 int print_percent(va_list ptr_var);
