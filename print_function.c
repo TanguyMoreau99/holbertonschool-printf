@@ -12,7 +12,7 @@ int print_char(va_list ptr_var)
 	char c;
 	c = va_arg(ptr_var, int);
 	_putchar(c);
-	return (0);
+	return (1);
 }
 
 /**
@@ -25,15 +25,13 @@ int print_char(va_list ptr_var)
 int print_string(va_list ptr_var)
 {
 	int i;
-	char *ptr_string;
-
-	ptr_string = 0;
-	*ptr_string = va_arg(ptr_var, int);
+	char *ptr_string = va_arg(ptr_var, char *);
 
 	for (i = 0 ; ptr_string[i] != '\0' ; i++)
+	{
 		_putchar(ptr_string[i]);
-
-	return (0);
+	}
+	return (i);
 }
 
 /**
@@ -47,7 +45,7 @@ int print_percent(va_list ptr_var)
 {
 	(void)ptr_var;
 	_putchar('%');
-	return (0);
+	return (1);
 }
 
 /**

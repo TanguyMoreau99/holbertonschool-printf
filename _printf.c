@@ -28,12 +28,15 @@ int _printf(const char *ptr_format, ...)
 				{
 					_putchar('%');
 				}
-
-				ptr_print(ptr_var);
+				else
+				{
+					ptr_print(ptr_var);
+					i++;
+				}
 			}
 		}
-
-		_putchar(ptr_format[i]);
+		else
+			_putchar(ptr_format[i]);
 		i++;
 	}
 
