@@ -59,11 +59,37 @@ int print_percent(va_list ptr_var)
 
 int print_decimal(va_list ptr_var)
 {
-	char c;
+	int integer = va_arg(ptr_var, int);
+	int count = 0;
+	int digit = 0;
+	int memory = 0;
 
-	c = va_arg(ptr_var, int);
-	_putchar(c);
-	return (0);
+	if (integer == 0)
+	{
+		_putchar(0);
+
+	}
+
+	if (integer < 0)
+		{
+			_putchar('-');
+			count = (count + 1);
+			integer = (integer *(-1));
+		}
+	while (integer > 0)
+	{
+		digit = integer %10;
+		memory = (memory * 10) + digit;
+		integer = integer /10;
+	}
+	while (memory > 0)
+	{
+		digit = memory %10;
+		_putchar(digit + '0');
+		memory = memory /10;
+		count++;
+	}
+	return(count);
 }
 
 /**
@@ -75,9 +101,5 @@ int print_decimal(va_list ptr_var)
 
 int print_integer(va_list ptr_var)
 {
-	char c;
-
-	c = va_arg(ptr_var, int);
-	_putchar(c);
-	return (0);
+	return(print_decimal(ptr_var));
 }
