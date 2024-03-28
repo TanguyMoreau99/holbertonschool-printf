@@ -62,20 +62,20 @@ int print_decimal(va_list ptr_var)
 	int integer = va_arg(ptr_var, int);
 	int count = 0;
 	int digit = 0;
-	int memory = 0;
+	long memory = 0;
 
 	if (integer == 0)
 	{
 		_putchar(0);
-
 	}
 
 	if (integer < 0)
-		{
-			_putchar('-');
-			count = (count + 1);
-			integer = (integer *(-1));
-		}
+	{
+		_putchar('-');
+		count = (count + 1);
+		integer = (integer *(-1));
+	}
+
 	while (integer > 0)
 	{
 		digit = integer %10;
