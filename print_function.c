@@ -4,14 +4,15 @@
  * print_char - Print an unique character
  * @ptr_var: va_list
  *
- * Return: Always 0
+ * Return: number of printed characters
 */
 
 int print_char(va_list ptr_var)
 {
-	char c;
-	c = va_arg(ptr_var, int);
-	_putchar(c);
+	char character;
+
+	character = va_arg(ptr_var, int);
+	_putchar(character);
 	return (1);
 }
 
@@ -19,31 +20,32 @@ int print_char(va_list ptr_var)
  * print_string - Print a chain of characters
  * @ptr_var: va_list
  *
- * Return: Always 0
+ * Return: number of printed characters
 */
 
 int print_string(va_list ptr_var)
 {
-	int i;
+	int index;
 	char *ptr_string = va_arg(ptr_var, char *);
 
-	for (i = 0 ; ptr_string[i] != '\0' ; i++)
+	for (index = 0 ; ptr_string[index] != '\0' ; index++)
 	{
-		_putchar(ptr_string[i]);
+		_putchar(ptr_string[index]);
 	}
-	return (i);
+	return (index);
 }
 
 /**
  * print_percent - Print a % symbol
  * @ptr_var: va_list
  *
- * Return: Always 0
+ * Return: number of printed characters
 */
 
 int print_percent(va_list ptr_var)
 {
 	(void)ptr_var;
+
 	_putchar('%');
 	return (1);
 }
@@ -52,12 +54,13 @@ int print_percent(va_list ptr_var)
  * print_decimal - Print a decimal
  * @ptr_var: va_list
  *
- * Return: Always 0
+ * Return: number of printed characters
 */
 
 int print_decimal(va_list ptr_var)
 {
 	char c;
+
 	c = va_arg(ptr_var, int);
 	_putchar(c);
 	return (0);
@@ -67,12 +70,13 @@ int print_decimal(va_list ptr_var)
  * print_integer - Print an integer
  * @ptr_var: va_list
  *
- * Return: Always 0
+ * Return: number of printed characters
 */
 
 int print_integer(va_list ptr_var)
 {
 	char c;
+
 	c = va_arg(ptr_var, int);
 	_putchar(c);
 	return (0);

@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * get_print_function - check and verifier the specifier to send it
+ * get_print_function - check and verify the specifier to send it
  * to the right function to use
  *
- * @s: The specifier
+ * @ptr_specifier: The specifier
  *
- * Return:
+ * Return: Function to use if a specifier is found or NULL if else
  */
 
 
@@ -20,15 +20,15 @@ int (*get_print_function(const char *ptr_specifier))(va_list)
 		{"i", print_integer},
 		{NULL, NULL}
 		};
-	int i = 0;
+	int index = 0;
 
-	while (spe[i].specifier != NULL)
+	while (spe[index].specifier != NULL)
 	{
-		if (spe[i].specifier[0] == ptr_specifier[0])
+		if (spe[index].specifier[0] == ptr_specifier[0])
 		{
-			return (spe[i].print_function);
+			return (spe[index].print_function);
 		}
-		i++;
+		index++;
 	}
 
 	return (NULL);
