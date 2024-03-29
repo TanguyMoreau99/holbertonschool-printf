@@ -34,16 +34,16 @@ int _printf(const char *ptr_format, ...)
 				/* Link the specifier to the right function */
 				ptr_print = get_print_function(&ptr_format[index + 1]);
 
-				/* If the specifier is not on the list, print '%'
-				add the count of characters */
+				/* If the specifier is not on the list, print '%' */
+				/* add the count of characters */
 				if (ptr_print == NULL)
 				{
 					_putchar('%');
 					count_char++;
 				}
-				/* If the specifier is on the list, print the variable given on
-				the variadic list of arguments, add the count of characters
-				and skip the next character */
+				/* If the specifier is on the list, print the variable given */
+				/* on the variadic list of arguments, add the count of */
+				/* characters and skip the next character */
 				else
 				{
 					count_char = count_char + ptr_print(ptr_var);
@@ -51,8 +51,8 @@ int _printf(const char *ptr_format, ...)
 				}
 			}
 		}
-		/* If the character is other than '%', print the character and
-		add the count of characters */
+		/* If the character is other than '%', print the character and */
+		/* add the count of characters */
 		else
 		{
 			_putchar(ptr_format[index]);
