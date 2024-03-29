@@ -1,0 +1,77 @@
+.TH _printf 3 "March 2023, Jiguet Catherine and Moreau Tanguy"
+
+.SH NAME
+_printf \- Print formatted output to stdout
+
+.SH SYNOPSIS
+.B #include "main.h"
+.br
+.B int _printf(const char *format, ...);
+
+
+.SH DESCRIPTION
+The \fB_printf\fR function stands as a personalized rendition of the \fBprintf\fR function from the C standard library. Its purpose remains the same: to facilitate formatted output printing directed to the standard output (stdout).
+
+.PP
+In \fB_printf\fR, the format string serves as the initial argument, trailed by a flexible number of arguments, each aligned with the format specifiers found within the format string.
+
+.PP
+Within the format string, you will encounter a blend of regular characters and format specifiers. These specifiers commence with the percent character ('%') and are followed by conversion characters, determining the nature of the corresponding argument.
+
+.PP
+Available format specifiers are:
+.TP
+\fB%c\fR
+Prints - for character.
+
+.TP
+\fB%s\fR
+Prints - for string.
+
+.TP
+\fB%%\fR
+Prints - percent sign.
+
+.TP
+\fB%d\fR, \fB%i\fR
+Prints - for integer.
+
+.SH RETURN VALUE
+The \fB_printf\fR function returns the number of characters printed
+
+.SH EXAMPLES
+.B Print - character:
+.PP
+#include "main.h"
+.br
+_printf("%c", 'H'); // Output: H
+
+.PP
+.B Print - string:
+.PP
+#include "main.h"
+.br
+_printf("%s", "We are students at Holberton School"); // Output: We are students at Holberton School
+
+.PP
+.B Print - modulo:
+.PP
+#include "main.h"
+.br
+_printf("This is a modulo: %%"); // Output: This is a modulo: %
+
+.PP
+.B Print - integer:
+.PP
+#include "main.h"
+.br
+_printf("%d", 26); // Output: 26
+
+.SH BUGS
+No known bugs at the moment.
+
+.SH SEE ALSO
+.B man printf
+
+.SH AUTHORS
+.B JIGUET Catherine and MOREAU Tanguy
