@@ -17,6 +17,7 @@ int print_decimal(va_list ptr_var)
 	if (integer == 0) /* If the number is 0, just print 0 */
 	{
 		_putchar(48);
+		return (1);
 	}
 	if (integer < 0) /* If the integer is negative, print the '-' */
 	/* multiply the integer *-1 to access the while loop */
@@ -48,6 +49,7 @@ int print_decimal(va_list ptr_var)
 		memory = memory / 10;
 		count++;
 	}
+
 	return (count);
 }
 
