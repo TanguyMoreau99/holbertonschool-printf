@@ -28,9 +28,12 @@ int print_string(va_list ptr_var)
 	int index;
 	char *ptr_string = va_arg(ptr_var, char *);
 
-	for (index = 0 ; ptr_string[index] != '\0' ; index++)
+	if (ptr_string == NULL)
+		_puts("(null)");
+	else
 	{
-		_putchar(ptr_string[index]);
+		for (index = 0 ; ptr_string[index] != '\0' ; index++)
+			_putchar(ptr_string[index]);
 	}
 	return (index);
 }

@@ -22,6 +22,7 @@ typedef struct print
 } print;
 
 int _putchar(char c);
+void _puts(char *str);
 int _printf(const char *ptr_format, ...);
 int (*get_print_function(const char *ptr_specifier))(va_list);
 int print_char(va_list ptr_var);

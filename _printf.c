@@ -16,9 +16,8 @@ int _printf(const char *ptr_format, ...)
 	va_list ptr_var;
 
 	if (ptr_format == NULL)
-	{
 		return (-1);
-	}
+
 	va_start(ptr_var, ptr_format); /* Initialize variadic list of arguments */
 
 	while (ptr_format[index] != '\0') /* Display character by character */
@@ -28,7 +27,6 @@ int _printf(const char *ptr_format, ...)
 			if (ptr_format[index + 1] != '\0')
 			{
 				ptr_print = get_print_function(&ptr_format[index + 1]);
-
 				if (ptr_print == NULL)
 				{
 					_putchar('%');
@@ -40,6 +38,8 @@ int _printf(const char *ptr_format, ...)
 					index++;
 				}
 			}
+			else
+				return (-1);
 		}
 		else
 		{
