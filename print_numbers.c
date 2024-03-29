@@ -9,10 +9,10 @@
 
 int print_decimal(va_list ptr_var)
 {
-	long long integer = va_arg(ptr_var, int);
+	long integer = va_arg(ptr_var, int);
 	int count = 0;
 	int digit = 0;
-	long long memory = 0;
+	long memory = 0;
 
 	if (integer == 0) /* If the number is 0, just print 0 */
 	{
