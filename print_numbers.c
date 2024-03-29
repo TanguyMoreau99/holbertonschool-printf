@@ -26,7 +26,6 @@ int print_decimal(va_list ptr_var)
 		count = (count + 1);
 		integer = (integer * (-1));
 	}
-
 	while (integer > 0)
 	/* To get digits of the integer we use %10 and put the digit */
 	/* into the variable memory. Once we stock a digit, we divide */
@@ -49,7 +48,6 @@ int print_decimal(va_list ptr_var)
 		memory = memory / 10;
 		count++;
 	}
-
 	return (count);
 }
 
