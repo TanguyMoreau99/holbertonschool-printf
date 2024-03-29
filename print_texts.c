@@ -29,13 +29,16 @@ int print_string(va_list ptr_var)
 	char *ptr_string = va_arg(ptr_var, char *);
 
 	if (ptr_string == NULL)
+	{
 		_puts("(null)");
+		return (6);
+	}
 	else
 	{
 		for (index = 0 ; ptr_string[index] != '\0' ; index++)
 			_putchar(ptr_string[index]);
+		return (index);
 	}
-	return (index);
 }
 
 /**
