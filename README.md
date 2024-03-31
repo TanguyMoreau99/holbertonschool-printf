@@ -1,6 +1,6 @@
 # Recreate a simple _printf
 
-![UML Activity diagram](~/holbertonschool-printf/UML_activity_diagram.png)
+![UML Activity diagram](UML_activity_diagram.png)
 
 ## Description :clipboard:
 Our project implements a _printf function in C, which produces output according to a given format string.
